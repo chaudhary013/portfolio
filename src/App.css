@@ -1,0 +1,39 @@
+/* src/index.css */
+body {
+  background: var(--body-bg);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+  animation: var(--animation);
+}
+
+:root {
+  --body-bg: #fff;
+  --text-color: #000;
+  --animation: none;
+}
+
+[data-theme='dark'] {
+  --body-bg: #000;
+  --text-color: #fff;
+  --animation: fadeIn 1s ease-in-out, colorChange 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes colorChange {
+  from {
+    filter: hue-rotate(0deg);
+  }
+
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
